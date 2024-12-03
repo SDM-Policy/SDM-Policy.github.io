@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+    content="This paper introduces 3D-ViTac, a multi-modal sensing and learning system designed for dexterous bimanual manipulation. Our system features tactile sensors equipped with dense sensing units, each covering an area of 3 mm^2. These sensors are low-cost and flexible, providing detailed and extensive coverage of physical contacts, effectively complementing visual information. To integrate tactile and visual data, we fuse them into a unified 3D representation space that preserves their 3D structures and spatial relationships. The multi-modal representation can then be coupled with diffusion policies for imitation learning. Through concrete hardware experiments, we demonstrate that even low-cost robots can perform precise manipulations and significantly outperform vision-only policies, particularly in safe interactions with fragile items and executing long-horizon tasks involving in-hand manipulation.">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3D-Visuo-Tactile</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <!-- Centering the columns -->
+            <div class="columns is-centered is-vcentered">
+                <div class="column has-text-centered">
+                    <div class="is-size-5 publication-authors">
+                        <h1 style="text-align: center; margin-bottom: 0; font-size: 300%; background-image: linear-gradient(to right, #C4A0D5, #E4959E); -webkit-background-clip: text; color: transparent;">
+                            Score and Distribution Matching Policy
+                        </h1>
+                        <h1 class="title is-2 publication-title" style="color: #609AB0;">
+                            Advanced accelerated Visuomotor Policies via matched distillation
+                        </h1>            
+                        <span class="author-block">
+                            <a href="https://bofangjia1227.github.io/page/">Bofang Jia</a><sup>1, 2</sup>
+                        </span>
+                        <span class="author-block">
+                            <a href="http://cuixxx.github.io/">Can Cui</a><sup>1</sup>
+                        </span>
+                        <span class="author-block">
+                            <a href="https://bofangjia1227.github.io/page/">Pengxiang Ding</a><sup>1</sup>
+                        </span>
+                        <span class="author-block">
+                            <a href="https://bofangjia1227.github.io/page/">Mingyang Sun</a><sup>1</sup>
+                        </span>
+                        <span class="author-block">
+                            <a href="https://bofangjia1227.github.io/page/">Pengfang Qian</a><sup>1</sup>
+                        </span>
+                        <span class="author-block">
+                            <a href="https://bofangjia1227.github.io/page/">Siteng Huang</a><sup>3</sup>
+                        </span>
+                        <span class="author-block">
+                            <a href="https://bofangjia1227.github.io/page/">Zhaoxin Fan</a><sup>4</sup>
+                        </span>
+                        <span class="author-block">
+                            <a href="https://bofangjia1227.github.io/page/">Donglin Wang</a><sup>1</sup>
+                        </span>
+                    </div>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"><sup>1</sup>Westlake University,</span>
+                        <span class="author-block"><sup>2</sup>Southwest University,</span>
+                        <span class="author-block"><sup>3</sup>University,</span>
+                        <span class="author-block"><sup>4</sup>University</span>
+                    </div>
+                    </br>
+                    <div class="is-size-4 publication-authors">
+                        <span class="author-block">Under review</span>
+                    </div>
+                    </br>
+                    <div class="columns is-centered has-text-centered">
+                        <div class="publication-links">
+                            <!-- PDF Link. -->
+                            <span class="link-block">
+                                <a href="https://arxiv.org/pdf/2410.24091"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </span>
+                                    <span>Paper</span>
+                                </a>
+                            </span>
+                            <span class="link-block">
+                                <a href="https://arxiv.org/abs/2410.24091" class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="ai ai-arxiv"></i>
+                                    </span>
+                                    <span>arXiv</span>
+                                </a>
+                            </span>
+                            <!-- Video Link. -->
+                            <span class="link-block">
+                                <a href="https://docs.google.com/presentation/d/1SwCQSpxyPzJLjstmCKtkiAVgUQpDCWorXOKJG6SilJ8/edit?usp=sharing" class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </span>
+                                    <span>Presentation</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- <section class="overall teaser">
+    <div class="container">
+      <div class="hero-body">
+        <embed src="C:\Users\admin\Desktop\CVPR-Data\teaser.pdf" width="70%" height="300px" style="border-radius:10px;">
+      </div>
+    </div>
+  </section> -->
+
+  <section class="overall teaser">
+    <div class="container">
+      <div class="hero-body">
+        <img src="C:\Users\admin\Desktop\CVPR-Data\teaser.png" width="99%" style="border-radius:10px;">
+      </div>
+    </div>
+  </section>
+  
+  
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+                Diffusion Policy has been proven effective for imitation learning, enabling robots to learn complex tasks by modeling action distributions. 
+                However, the long inference time limits its suitability for high-frequency control tasks, which is essential for practical applications of robots in real-world settings. 
+                To address these limitations, we propose the <b>Score and Distribution Matching Policy (SDM Policy)</b>, 
+                an innovative imitation learning algorithm that builds upon pre-trained Diffusion Policy and utilizes two teacher models to optimize a one-step generator. By integrating gradient optimization and diffusion optimization, 
+                and employing KL divergence to align generated actions with the target distribution, 
+                SDM Policy overcomes stepwise error accumulation and achieves global consistency. 
+                Our approach, validated across 57 robotic tasks in simulated environments, results in a 6 times increase in inference speed and improved action quality, 
+                striking a balance between speed and precision. This method provides a scalable and practical solution for robot manipulation.
+            </p>
+          </div>
+          <!-- <div class="12u$"><a href="170_3D_ViTac_Learning_Fine_Gra.pdf"><span class="image fit"
+                style="border: 1px solid; border-color: #888888;"><img
+                  src="combined_cropped_image.png" alt="" /></span></a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- <section>
+    <div class="container">
+    <br>
+
+    <h2 class="title is-3">BibTeX</h2>
+    <pre><code>@inproceedings{huang20243dvitac,
+title={3D ViTac:Learning Fine-Grained Manipulation with Visuo-Tactile Sensing},
+author={Huang, Binghao and Wang, Yixuan and Yang, Xinyi and Luo, Yiyue and Li, Yunzhu}
+booktitle={Proceedings of Robotics: Conference on Robot Learning(CoRL)},
+year={2024}
+}</code></pre>
+    </div>
+  </section> -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
