@@ -129,7 +129,7 @@
     <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
-          <h2 class="title is-3">Abstract</h2>
+          <h2 class="title is-2">Abstract</h2>
           <div class="content has-text-justified">
             <p>
                 Diffusion Policy has been proven effective for imitation learning, enabling robots to learn complex tasks by modeling action distributions. 
@@ -141,17 +141,20 @@
                 Our approach, validated across 57 robotic tasks in simulated environments, results in a 6 times increase in inference speed and improved action quality, 
                 striking a balance between speed and precision. This method provides a scalable and practical solution for robot manipulation.
             </p>
+            <div style="border-top: 5px dashed gray; margin: 50px 0;"></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+
+
   <section class="section">
     <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
-          <h2 class="title is-3">Overview of SDM Policy</h2>
+          <h2 class="title is-2">Overview of SDM Policy</h2>
           <div class="content has-text-justified">
             <script type="text/javascript" async
               src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
@@ -160,9 +163,9 @@
               <p>
                 Our method distills the Diffusion Policy, which requires long inference times and high computational costs, 
                 into a fast and stable one-step generator. Our <strong>SDM Policy</strong> is represented by the one-step generator, 
-                which requires continual correction and optimization via the <strong>Corrector</strong> during training, 
+                which requires continual correction and optimization via the Corrector during training, 
                 but relies solely on the generator during evaluation. The corrector's optimization is based on two components: 
-                <strong>gradient optimization</strong> and <strong>diffusion optimization</strong>. 
+                gradient optimization and diffusion optimization. 
                 The gradient optimization part primarily involves optimizing the entire distribution by minimizing the KL divergence between two distributions, 
                 \( P_{\theta} \) and \( D_{\theta} \), with distribution details represented through a score function that guides the gradient update direction, 
                 providing a clear signal. The diffusion optimization component enables \( D_{\theta} \) to quickly track changes in the one-step generator’s output, 
@@ -173,6 +176,7 @@
           <div class="hero-body">
             <img src="./main_figure.svg" width="99%" style="border-radius:10px;">
           </div>
+          <div style="border-top: 5px dashed gray; margin: 50px 0;"></div>
         </div>
       </div>
     </div>
@@ -183,11 +187,12 @@
     <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
-          <h2 class="title is-3">Efficiency and Effectiveness</h2>
+          <h2 class="title is-2">Efficiency and Effectiveness</h2>
           <div class="content has-text-justified">
             <script type="text/javascript" async
               src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
             </script>
+            <h2 class="title is-4">High accuracy</h2>
             <p>
               We evaluated 57 challenging tasks using 3 random seeds and reported the average success rate
               (%) and standard deviation for three domains. \( ∗ \) indicates our reproduction of that task, and indicates that the data for this method has
@@ -198,81 +203,129 @@
           <div class="hero-body">
             <img src="./sr.png" width="99%" style="border-radius:10px;">
           </div>
+          <div style="border-top: 5px dashed gray; margin: 50px 0;"></div>
           <div class="content has-text-justified">
             <script type="text/javascript" async
               src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
             </script>
-          <p>
-            We sampled 10 simulation tasks and presented the learning curves of our SDM Policy alongside DP3
-            and ManiCM. SDM Policy demonstrated a rapid convergence rate. In contrast, ManiCM showed slower learning progress, and DP3’s
-            convergence speed was also slower than our method.
-          </p>
+            <h2 class="title is-4">Learning efficiency</h2>
+            <p>
+              We sampled 10 simulation tasks and presented the learning curves of our SDM Policy alongside DP3
+              and ManiCM. SDM Policy demonstrated a rapid convergence rate. In contrast, ManiCM showed slower learning progress, and DP3’s
+              convergence speed was also slower than our method.
+            </p>
           </div>
           <div class="hero-body">
             <img src="./comparison_plot_adjusted_manual_size_with_zoom_individual_ranges_v7.svg" width="99%" style="border-radius:10px;">
           </div>
+          <div style="border-top: 5px dashed gray; margin: 50px 0;"></div>
           <div class="content has-text-justified">
             <script type="text/javascript" async
               src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
             </script>
-          <p>
-            We evaluated 57 challenging tasks using 3 random seeds and reported the average speed (Hz)
-            for three domains. \( ∗ \) indicates our reproduction of that task. Our SDM Policy outperforms the current state-of-the-art model in one-step
-            inference, achieving better results than Consistency Distillation, providing strong evidence of the effectiveness of our model.
-          </p>
+            <h2 class="title is-4">Competitive inference speed</h2>
+            <p>
+              We evaluated 57 challenging tasks using 3 random seeds and reported the average speed (Hz)
+              for three domains. \( ∗ \) indicates our reproduction of that task. Our SDM Policy outperforms the current state-of-the-art model in one-step
+              inference, achieving better results than Consistency Distillation, providing strong evidence of the effectiveness of our model.
+            </p>
           </div>
           <div class="hero-body">
             <img src="./time.png" width="99%" style="border-radius:10px;">
           </div>
+          <div style="border-top: 5px dashed gray; margin: 50px 0;"></div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- <section class="section">
+  <section class="section">
     <div class="container">
       <div class="columns is-centered has-text-centered">
         <div class="column is-full-width">
-          <h2 class="title is-3">Visualization</h2>
+          <h2 class="title is-2">Visualization</h2>
           <div class="content has-text-justified">
-            <script type="text/javascript" async
-              src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-            </script>
             <div class="rows">
-              <h2 class="title is-3">In-The-Wild Manipulation</h2>
               <p class="content has-text-justified">
-                In-the-wild tasks investigated in the paper. Select a task to see its video and solution visualization.
+                Visualized keyframes for some tasks. We found that during training, our SDM Policy could better complete the task and learn more precise actions, while consistency distillation might lead to task failure.
               </p>
-                <div class="columns">
-                  <div class="column has-text-centered">
-                    <div class="select is-rounded">     
-                      <select id="inthewild-video-menu" onchange="updateInTheWild()">
-                        <option value="stow-book" selected="selected">Stow Book</option>
-                      <option value="pour-tea">Pour Tea</option>
-                      <option value="tape-box">Tape Box</option>
-                      <option value="recycle-can">Recycle Can</option>
-                      </select>
-                    </div>
-                  </div>
-            
-                </div>
-            
-                <div class="columns">
-                  <div class="column has-text-centered">
-                    <p style="text-align:center;">
-                      <video id="inthewild-video" width="100%" height="100%" controls autoplay loop muted>
-                        <source src="media/videos/pour-tea-dist.m4v" type="video/mp4">
-                      </video>
-                    </p>
+              <div class="columns">
+                <div class="column has-text-centered">
+                  <!-- Dropdown Menu -->
+                  <div class="select is-rounded">
+                    <select id="image-menu" onchange="updateImage()">
+                      <option value="./images/basketball.png" selected="selected">Basketball</option>
+                      <option value="./images/pushwall.png">Push Wall</option>
+                      <option value="./images/peginsertside.png">Peg Insert Side</option>
+                      <option value="./images/sweep.png">Sweep</option>
+                      <option value="./images/shelfplace.png">Shelf Place</option>
+                      <option value="./images/push.png">Push</option>
+                      <option value="./images/dialturn.png">Dial Turn</option>
+                      <option value="./images/plateslideback.png">Plate Slide Back</option>
+                      <option value="./images/doorunlock.png">Door Unlock</option>
+                      <option value="./images/handlepullside.png">Handle Pull Side</option>
+                      <option value="./images/pen.png">Pen</option>
+                      <option value="./images/faucet.png">Faucet</option>
+                    </select>
                   </div>
                 </div>
+              </div>
+  
+              <!-- Image Display -->
+              <div class="columns">
+                <div class="column has-text-centered">
+                  <p style="text-align:center;">
+                    <img id="visualization-image" src="./images/basketball.png" alt="Visualization Image" style="width: 100%; height: auto; border: 1px solid #ccc; border-radius: 10px;">
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
+  
+  <!-- JavaScript for Image Switching -->
+  <script>
+    function updateImage() {
+      // Get the dropdown menu element
+      const menu = document.getElementById('image-menu');
+      // Get the selected value (image path)
+      const selectedImage = menu.value;
+      // Update the image source
+      const imageElement = document.getElementById('visualization-image');
+      imageElement.src = selectedImage;
+    }
+  </script>
+  
+
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-2">Acknowledgments</h2>
+          <div class="content has-text-justified">
+            <p>
+              We would like to thank the members of the Machine Intelligence Lab at Westlake University for fruitful discussions, helps on experiments, and support.
+              Our code is generally built upon:
+              <a href="https://github.com/YanjieZe/3D-Diffusion-Policy" target="_blank">3D Diffusion Policy</a>, 
+              <a href="https://github.com/ManiCM-fast/ManiCM" target="_blank">ManiCM</a>, 
+              <a href="https://github.com/tianweiy/DMD2" target="_blank">DMD</a>, 
+              <a href="https://github.com/real-stanford/diffusion_policy" target="_blank">Diffusion Policy</a>, 
+              <a href="https://github.com/Kami-code/dexart-release" target="_blank">DexArt</a>, 
+              <a href="https://github.com/microsoft/VRL3" target="_blank">VRL3</a>, 
+              <a href="https://github.com/Farama-Foundation/Metaworld" target="_blank">MetaWorld</a>. 
+              We thank all these authors for their nicely open sourced code and their great contributions to the community.
+            </p>
+            
+            <div style="border-top: 3px dashed gray; margin: 50px 0;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
 
