@@ -136,14 +136,13 @@
           <h2 class="title is-2">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-                Diffusion Policy has been proven effective for imitation learning, enabling robots to learn complex tasks by modeling action distributions. 
-                However, the long inference time limits its suitability for high-frequency control tasks, which is essential for practical applications of robots in real-world settings. 
-                To address these limitations, we propose the <b>Score and Distribution Matching Policy (SDM Policy)</b>, 
-                an innovative imitation learning algorithm that builds upon pre-trained Diffusion Policy and utilizes two teacher models to optimize a one-step generator. By integrating gradient optimization and diffusion optimization, 
-                and employing KL divergence to align generated actions with the target distribution, 
-                SDM Policy overcomes stepwise error accumulation and achieves global consistency. 
-                Our approach, validated across 57 robotic tasks in simulated environments, results in a 6 times increase in inference speed and improved action quality, 
-                striking a balance between speed and precision. This method provides a scalable and practical solution for robot manipulation.
+                Visual-motor policy learning has advanced with architectures like diffusion-based policies, known for modeling complex robotic trajectories. 
+              However, their prolonged inference times hinder high-frequency control tasks requiring real-time feedback. While consistency distillation (CD) accelerates inference, 
+              it introduces errors that compromise action quality. To address these limitations, we propose the Score and Distribution Matching Policy (SDM Policy), 
+              which transforms diffusion-based policies into single-step generators through a two-stage optimization process: score matching ensures alignment with true action distributions, and distribution matching minimizes KL divergence for consistency. 
+              A dual-teacher mechanism integrates a frozen teacher for stability and an unfrozen teacher for adversarial training, enhancing robustness and alignment with target distributions. 
+              Evaluated on a 57-task simulation benchmark, SDM Policy achieves a 6x inference speedup while having state-of-the-art action quality, 
+              providing an efficient and reliable framework for high-frequency robotic tasks.
             </p>
             <div style="border-top: 5px dashed gray; margin: 50px 0;"></div>
           </div>
